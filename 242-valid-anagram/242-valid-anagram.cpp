@@ -5,14 +5,13 @@ public:
         
         if(t.length()>s.length())
             return false;
-        
-        for(char c: s)
-            vec1.emplace_back(c);
+        for(int i=0;i<s.length();i++)
+        {   
+            vec1.emplace_back(s[i]);
+            vec2.emplace_back(t[i]);
+        }
         
         sort(vec1.begin(), vec1.end());
-        for(char c: t)
-            vec2.emplace_back(c);
-        
         sort(vec2.begin(), vec2.end());
         if(vec1==vec2)
             return true;
