@@ -39,7 +39,6 @@ struct Node
 class Solution
 {
     public:
-    bool ans = true;
     void findPreSuc(Node* root, Node*& pre, Node*& suc, int key)
     {
         // Your code goes here
@@ -48,9 +47,9 @@ class Solution
         findPreSuc(root->left,pre,suc,key);
         if(root->key<key)
             pre = root;
-        else if(ans && root->key>key) {
-            suc = root;
-            ans = false;
+        else if(root->key>key) {
+            if(!suc)
+                suc = root;
             return;
         }
             
